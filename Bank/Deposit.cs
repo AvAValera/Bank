@@ -7,23 +7,24 @@ namespace Bank
 {
     class Deposit
     {
-        public void OpenDeposit()
+       
+        public void OpenDeposit(double money)
         {
-            saveDataDeposit();
-        }
-
-        void saveDataDeposit()
-        {
-            FileInfo file = new FileInfo("acc.txt");
+            if (!File.Exists("deposit.txt"))
+            {
+                using (File.Create("deposit.txt"));
+            }
+            FileInfo file = new FileInfo("deposit.txt");
 
             DateTime data = DateTime.Now;
             if (file.Length != 0)
             {
-                Console.WriteLine("Deposit now open");
+                Console.WriteLine("Deposit now open!");
+                return;
             }
             else
             {
-                using (StreamWriter sw = new StreamWriter("acc.txt"))
+                using (StreamWriter sw = new StreamWriter("deposit.txt")) //save date
                 {
                     sw.WriteLine(data.Year);
                     sw.WriteLine(data.Month);
@@ -31,22 +32,27 @@ namespace Bank
                     sw.WriteLine(data.Hour);
                     sw.WriteLine(data.Minute);
                     sw.WriteLine(data.Second);
+                    sw.WriteLine(money);
                 }
             }
-
         }
 
-        public void checkDeposit(double mon)
+        public void CheckDeposit()
         {
             string[] saveData = new string[5];
-            saveData = File.ReadAllLines("acc.txt");
+            saveData = File.ReadAllLines("deposit.txt");
             DateTime dt = new DateTime(Convert.ToInt32(saveData[0]), Convert.ToInt32(saveData[1]), Convert.ToInt32(saveData[2]), Convert.ToInt32(saveData[3]),
                 Convert.ToInt32(saveData[4]), Convert.ToInt32(saveData[5]));
             TimeSpan ts = DateTime.Now - dt;
-            Console.WriteLine(ts);
-            double money = 0;
-            money = (ts.TotalSeconds * mon) / 1000; //10sec = 1$
-            Console.WriteLine((int)money + mon);
+            Console.WriteLine($"Dposit open time {ts}");
+            double moneyDeposit = Convert.ToDouble(saveData[6]);
+            double totalMoney = 0;
+            totalMoney = (ts.TotalSeconds * moneyDeposit) / 1000; //10sec = 1$ if 100$ deposit
+            Console.WriteLine(totalMoney + moneyDeposit);
+        }
+        public void CloseDeposit()
+        {
+
         }
     }
 }
