@@ -6,11 +6,12 @@ namespace Bank
     {
         static void Main(string[] args)
         {
+            var shtext = new ShowText();
             Accounting acc = new Accounting();
             var dep = new Deposit();
             dep.OpenDeposit(100);
-            Console.WriteLine("Welcome to the BANK");
-            Console.WriteLine("1-Balance\n2-Take money\n3-Add money\n4-Deposit");
+            shtext.Text("Welcome to the BANK\n");
+            shtext.Text("1-Balance\n2-Take money\n3-Add money\n4-Deposit\n");
 
             var choise = Console.ReadLine();
 
@@ -20,18 +21,18 @@ namespace Bank
                     acc.CheckBalanse();
                     break;
                 case "2":
-                    Console.WriteLine("How much money?");
+                    shtext.Text("How much money?");
                     int mon = int.Parse(Console.ReadLine());
                     acc.takeMoney(mon);
                     break;
                 case "3":
-                    Console.WriteLine("How much add moneys in you account?");
+                    shtext.Text("How much add moneys in you account?");
                     int monn = int.Parse(Console.ReadLine());
                     acc.addBalance(monn);
                     break;
                 case "4":
-                    Console.WriteLine("Deposit menu");
-                    Console.WriteLine("1-Open deposit\n2-Close deposit\n3-Check deposit\n4-Main menu");
+                    shtext.Text("Deposit menu\n");
+                    shtext.Text("1-Open deposit\n2-Close deposit\n3-Check deposit\n4-Main menu");
                     var choiseDep = Console.ReadLine();
                     switch (choiseDep)
                     {
@@ -47,8 +48,8 @@ namespace Bank
                         default:
                             break;
                     }
-                    Console.WriteLine("Conditions Deposit : (6 %)Six percent in minute");
-                    Console.WriteLine("Enter quantity put down on your deposit.");
+                    shtext.Text("Conditions Deposit : (6 %)Six percent in minute");
+                    shtext.Text("Enter quantity put down on your deposit.");
                     break;
                 default:
                     break;

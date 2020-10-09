@@ -7,7 +7,7 @@ namespace Bank
 {
     class Deposit
     {
-       
+        private static double percentDeposit;
         public void OpenDeposit(double money)
         {
             if (!File.Exists("deposit.txt"))
@@ -46,13 +46,14 @@ namespace Bank
             TimeSpan ts = DateTime.Now - dt;
             Console.WriteLine($"Dposit open time {ts}");
             double moneyDeposit = Convert.ToDouble(saveData[6]);
-            double totalMoney = 0;
-            totalMoney = (ts.TotalSeconds * moneyDeposit) / 1000; //10sec = 1$ if 100$ deposit
-            Console.WriteLine(totalMoney + moneyDeposit);
+            percentDeposit = (ts.TotalSeconds * moneyDeposit) / 1000; //10sec = 1$ if 100$ deposit
         }
         public void CloseDeposit()
         {
-
+            if(File.Exists("deposit.txt"))
+            {
+               
+            }
         }
     }
 }

@@ -7,7 +7,8 @@ namespace Bank
 {
     class Accounting
     {
-        private static int balance { get; set; }
+        ShowText shtext = new ShowText();
+        public static int balance { get; private set; }
 
         public void takeMoney(int money)
         {
@@ -16,6 +17,7 @@ namespace Bank
             {
                 int totalBalance = balance - money;
                 sw.WriteLine(totalBalance);
+                shtext.Text($"Total balanse is: {totalBalance}\n");
             }
         }
         public void addBalance(int money)
@@ -31,10 +33,10 @@ namespace Bank
         {
             using (StreamReader sr = new StreamReader("balance.txt"))
             {
-                Console.WriteLine($"Balanse is: " + sr.ReadLine() + "$");
+                shtext.Text($"Balanse is: " + sr.ReadLine() + "$");
             }
         }
-        void operationBalance()
+        private void operationBalance()
         {
             using (StreamReader sr = new StreamReader("balance.txt"))
             {
