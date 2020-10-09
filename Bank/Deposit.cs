@@ -7,33 +7,25 @@ namespace Bank
 {
     class Deposit
     {
+        public Deposit()
+        {
+            var _check = new CheckingDataFile();
+            _check.CheckFileDeposit();
+        }
         private static double percentDeposit;
+        
         public void OpenDeposit(double money)
         {
-            if (!File.Exists("deposit.txt"))
-            {
-                using (File.Create("deposit.txt"));
-            }
-            FileInfo file = new FileInfo("deposit.txt");
-
             DateTime data = DateTime.Now;
-            if (file.Length != 0)
+            using (StreamWriter sw = new StreamWriter("deposit.txt")) //save date
             {
-                Console.WriteLine("Deposit now open!");
-                return;
-            }
-            else
-            {
-                using (StreamWriter sw = new StreamWriter("deposit.txt")) //save date
-                {
-                    sw.WriteLine(data.Year);
-                    sw.WriteLine(data.Month);
-                    sw.WriteLine(data.Day);
-                    sw.WriteLine(data.Hour);
-                    sw.WriteLine(data.Minute);
-                    sw.WriteLine(data.Second);
-                    sw.WriteLine(money);
-                }
+                sw.WriteLine(data.Year);
+                sw.WriteLine(data.Month);
+                sw.WriteLine(data.Day);
+                sw.WriteLine(data.Hour);
+                sw.WriteLine(data.Minute);
+                sw.WriteLine(data.Second);
+                sw.WriteLine(money);
             }
         }
 
