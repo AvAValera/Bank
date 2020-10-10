@@ -14,5 +14,12 @@ namespace Bank
                 Thread.Sleep(50);
             }
         }
+
+        public void ReturnMenu()
+        {
+            Console.WriteLine("Press any key to return");
+            Console.ReadKey();
+            
+        }
     }
 }

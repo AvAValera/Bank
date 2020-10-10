@@ -7,11 +7,6 @@ namespace Bank
 {
     class Deposit
     {
-        public Deposit()
-        {
-            var _check = new CheckingDataFile();
-            _check.CheckFileDeposit();
-        }
         private static double percentDeposit;
         
         public void OpenDeposit(double money)
@@ -36,9 +31,10 @@ namespace Bank
             DateTime dt = new DateTime(Convert.ToInt32(saveData[0]), Convert.ToInt32(saveData[1]), Convert.ToInt32(saveData[2]), Convert.ToInt32(saveData[3]),
                 Convert.ToInt32(saveData[4]), Convert.ToInt32(saveData[5]));
             TimeSpan ts = DateTime.Now - dt;
-            Console.WriteLine($"Dposit open time {ts}");
+            Console.WriteLine("Deposit open time Day:{0} Time: {1}:{2}:{3:00}", ts.Days, ts.Hours, ts.Minutes, ts.Seconds);
             double moneyDeposit = Convert.ToDouble(saveData[6]);
             percentDeposit = (ts.TotalSeconds * moneyDeposit) / 1000; //10sec = 1$ if 100$ deposit
+            Console.WriteLine("Cash on the deposit: {0:F}$", percentDeposit);
         }
         public void CloseDeposit()
         {

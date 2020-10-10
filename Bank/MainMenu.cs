@@ -6,15 +6,18 @@ namespace Bank
     {
         static void Main(string[] args)
         {
-            MainMenu.MenuBank();
+            while (true)
+            {
+                MainMenu.MenuBank();
+            }
         }
 
         static void MenuBank()
         {
             var shtext = new ShowText();
             Accounting acc = new Accounting();
-            
-               MainMenu:
+            var dep = new Deposit();
+               
             shtext.Text("Welcome to the BANK\n");
             shtext.Text("1-Balance\n2-Take money\n3-Add money\n4-Deposit\n");
 
@@ -35,13 +38,7 @@ namespace Bank
                     int monn = int.Parse(Console.ReadLine());
                     acc.addBalance(monn);
                     shtext.Text($"On You balanse add is {monn}$\n");
-                    shtext.Text("Press any key to return the main menu\n");
-                    ConsoleKeyInfo key;
-                    key = Console.ReadKey();
-                    if (key.Equals(key))
-                    {
-                        goto MainMenu;
-                    }
+                    shtext.ReturnMenu();
                     break;
                     
                 case "4":
@@ -51,20 +48,28 @@ namespace Bank
                     switch (choiseDep)
                     {
                         case "1":
-                            var q = new CheckingDataFile();
-                            q.CheckFileDeposit();
-                            var dep = new Deposit();
+                            var _checdata = new CheckingDataFile();
+                            _checdata.CheckFileDeposit();
+                            if (CheckingDataFile.EnableDeposit == true) break;
                             shtext.Text("Conditions Deposit : (6 %)Six percent in minute\n");
                             shtext.Text("Enter quantity put down on your deposit.\n");
-                            
                             var money = Convert.ToDouble(Console.ReadLine());
                             dep.OpenDeposit(money);
                             acc.takeMoney(money);
+                            shtext.ReturnMenu();
                             break;
                             
                         case "2":
+                            shtext.Text("If you sure press \"y\" key or another key to return\n");
+                            var enterChoice = Console.ReadKey();
+                            if (enterChoice.Key == ConsoleKey.Y)
+                            {
+                                dep.CloseDeposit();
+                            }
                             break;
                         case "3":
+                            dep.CheckDeposit();
+                            shtext.ReturnMenu();
                             break;
                         case "4":
                             break;
