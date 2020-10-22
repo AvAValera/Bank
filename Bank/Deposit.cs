@@ -8,6 +8,12 @@ namespace Bank
     class Deposit
     {
         private static double percentDeposit;
+
+        public Deposit() //Check Deposit
+        {
+            var _checkData = new CheckingDataFile();
+            _checkData.CheckFileDeposit();
+        }
         
         public void OpenDeposit(double money)
         {

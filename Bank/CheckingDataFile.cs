@@ -34,7 +34,6 @@ namespace Bank
                 EnableDeposit = true;
                 ShowText shtext = new ShowText();
                 shtext.Text("Deposit now open!\n");
-                shtext.ReturnMenu();
             }
         }
     }

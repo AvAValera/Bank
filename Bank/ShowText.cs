@@ -19,7 +19,7 @@ namespace Bank
         {
             Console.WriteLine("Press any key to return");
             Console.ReadKey();
-            
+            Console.Clear();
         }
     }
 }

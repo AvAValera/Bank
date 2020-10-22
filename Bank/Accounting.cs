@@ -7,47 +7,36 @@ namespace Bank
 {
     class Accounting
     {
-        public Accounting()
-        {
-            var _check = new CheckingDataFile();
-            _check.CheckFileBalance();
-        }
-        ShowText shtext = new ShowText();
-        public static double balance { get; set; }
+       public static double balance { get; set; }
 
-        public void takeMoney(double money)
-        {
-            operationBalance();
-            using (StreamWriter sw = new StreamWriter("balance.txt"))
-            {
-                double totalBalance = balance - money;
-                sw.WriteLine(totalBalance);
-                shtext.Text($"Total balanse is: {totalBalance}\n");
-                shtext.ReturnMenu();
-            }
-        }
-        public void addBalance(double money)
-        {
-            operationBalance();
-            using (StreamWriter sw = new StreamWriter("balance.txt"))
-            {
-                double totalBalance = money + balance;
-                sw.WriteLine(totalBalance);
-            }
-        }
+       public Accounting() //Check Accounting
+       {
+           var _checkData = new CheckingDataFile();
+           _checkData.CheckFileBalance();
+       }
         public void CheckBalanse()
         {
             using (StreamReader sr = new StreamReader("balance.txt"))
             {
-                shtext.Text($"Balanse is: " + sr.ReadLine() + "$\n");
-                shtext.ReturnMenu();
+                balance = double.Parse(sr.ReadLine());
             }
         }
-        private void operationBalance()
+        public void TakeMoney(double money)
         {
-            using (StreamReader sr = new StreamReader("balance.txt"))
+            CheckBalanse();
+            if (balance >= money)
             {
-                balance = Int32.Parse(sr.ReadToEnd());
+                double result = balance - money;
+                using (var sw = new StreamWriter("balance.txt"))
+                {
+                    sw.WriteLine(result);
+                }
+            }
+            else
+            {
+                var sht = new ShowText();
+                sht.Text("On your balance, there is no required amount!\n");
+                return;
             }
         }
     }
