@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "kBUtlSlK16VMYzqZaRGznZX1E4BwGEYyiyH5m/Pg3H+KPzc58BKMfvKIs8lw32scYHk3eepsuDsbJMGNzJ8Zaw==",
+  "dgSpecHash": "P0vmb2zwaQ0rTvp7GXZdHAQIDf9cMk2egWs5F63El4vmF4TVoNY0+QTXWEyDoPumeX5R/B4jZ+9yW8bfyaldRw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Мама\\Desktop\\Bank\\Bank\\Bank\\Bank.csproj",
+  "projectFilePath": "/home/valera/Bank/Bank/Bank.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

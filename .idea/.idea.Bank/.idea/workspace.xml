@@ -19,12 +19,17 @@
       <change beforePath="$PROJECT_DIR$/Bank/CheckingDataFile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Bank/CheckingDataFile.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Bank/Deposit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Bank/Deposit.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Bank/MainMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Bank/MainMenu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bank/bin/Debug/netcoreapp3.1/Bank" beforeDir="false" afterPath="$PROJECT_DIR$/Bank/bin/Debug/netcoreapp3.1/Bank" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Bank/bin/Debug/netcoreapp3.1/Bank.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Bank/bin/Debug/netcoreapp3.1/Bank.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Bank/bin/Debug/netcoreapp3.1/Bank.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Bank/bin/Debug/netcoreapp3.1/Bank.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bank/bin/Debug/netcoreapp3.1/Bank.runtimeconfig.dev.json" beforeDir="false" afterPath="$PROJECT_DIR$/Bank/bin/Debug/netcoreapp3.1/Bank.runtimeconfig.dev.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Bank/bin/Debug/netcoreapp3.1/balance.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Bank/bin/Debug/netcoreapp3.1/balance.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Bank/bin/Debug/netcoreapp3.1/deposit.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Bank/bin/Debug/netcoreapp3.1/deposit.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Bank/obj/Bank.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Bank/obj/Bank.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bank/obj/Bank.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Bank/obj/Bank.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bank/obj/Debug/netcoreapp3.1/Bank" beforeDir="false" afterPath="$PROJECT_DIR$/Bank/obj/Debug/netcoreapp3.1/Bank" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Bank/obj/Debug/netcoreapp3.1/Bank.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Bank/obj/Debug/netcoreapp3.1/Bank.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bank/obj/Debug/netcoreapp3.1/Bank.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Bank/obj/Debug/netcoreapp3.1/Bank.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Bank/obj/Debug/netcoreapp3.1/Bank.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Bank/obj/Debug/netcoreapp3.1/Bank.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Bank/obj/Debug/netcoreapp3.1/Bank.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Bank/obj/Debug/netcoreapp3.1/Bank.csprojAssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Bank/obj/Debug/netcoreapp3.1/Bank.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Bank/obj/Debug/netcoreapp3.1/Bank.dll" afterDir="false" />
@@ -103,6 +108,7 @@
       <workItem from="1603177109221" duration="387000" />
       <workItem from="1603259936745" duration="5359000" />
       <workItem from="1603345558215" duration="5574000" />
+      <workItem from="1603358926867" duration="11879000" />
     </task>
     <servers />
   </component>
@@ -127,26 +133,34 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1557" height="222" key="GridCell.Tab.0.bottom" timestamp="1603352246139">
-      <screen x="0" y="0" width="1600" height="860" />
+    <state width="1634" height="232" key="GridCell.Tab.0.bottom" timestamp="1603371333213">
+      <screen x="0" y="27" width="1680" height="1023" />
     </state>
     <state width="1557" height="222" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1603352246139" />
-    <state width="1557" height="222" key="GridCell.Tab.0.center" timestamp="1603352246139">
-      <screen x="0" y="0" width="1600" height="860" />
+    <state width="1634" height="232" key="GridCell.Tab.0.bottom/0.27.1680.1023/1680.0.1440.900@0.27.1680.1023" timestamp="1603371333213" />
+    <state width="1634" height="232" key="GridCell.Tab.0.center" timestamp="1603371333213">
+      <screen x="0" y="27" width="1680" height="1023" />
     </state>
     <state width="1557" height="222" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1603352246139" />
-    <state width="1557" height="222" key="GridCell.Tab.0.left" timestamp="1603352246138">
-      <screen x="0" y="0" width="1600" height="860" />
+    <state width="1634" height="232" key="GridCell.Tab.0.center/0.27.1680.1023/1680.0.1440.900@0.27.1680.1023" timestamp="1603371333213" />
+    <state width="1634" height="232" key="GridCell.Tab.0.left" timestamp="1603371333213">
+      <screen x="0" y="27" width="1680" height="1023" />
     </state>
     <state width="1557" height="222" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1603352246138" />
-    <state width="1557" height="222" key="GridCell.Tab.0.right" timestamp="1603352246139">
-      <screen x="0" y="0" width="1600" height="860" />
+    <state width="1634" height="232" key="GridCell.Tab.0.left/0.27.1680.1023/1680.0.1440.900@0.27.1680.1023" timestamp="1603371333213" />
+    <state width="1634" height="232" key="GridCell.Tab.0.right" timestamp="1603371333213">
+      <screen x="0" y="27" width="1680" height="1023" />
     </state>
     <state width="1557" height="222" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1603352246139" />
+    <state width="1634" height="232" key="GridCell.Tab.0.right/0.27.1680.1023/1680.0.1440.900@0.27.1680.1023" timestamp="1603371333213" />
     <state x="301" y="75" key="SettingsEditor" timestamp="1603093289260">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="301" y="75" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1603093289260" />
+    <state x="493" y="157" width="683" height="770" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1603370897468">
+      <screen x="0" y="27" width="1680" height="1023" />
+    </state>
+    <state x="493" y="157" width="683" height="770" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.27.1680.1023/1680.0.1440.900@0.27.1680.1023" timestamp="1603370897468" />
     <state x="463" y="180" width="672" height="678" key="search.everywhere.popup" timestamp="1602320211193">
       <screen x="0" y="0" width="1600" height="860" />
     </state>

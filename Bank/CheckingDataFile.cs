@@ -34,12 +34,26 @@ namespace Bank
             if (file.Length != 0)
             {
                 var shtext = new ShowText();
-                shtext.Text("Deposit now open!\n");
+                shtext.Text("Deposit is open!\n");
                 return false;
             }
             else
             {
                 return true;
+            }
+        }
+        public bool CheckCloseDeposit()
+        {
+            FileInfo file = new FileInfo("deposit.txt");
+            if (file.Length != 0)
+            {
+                return true;
+            }
+            else
+            {
+                var shtext = new ShowText();
+                shtext.Text("Deposit not open!\n");
+                return false;
             }
         }
     }

@@ -16,6 +16,7 @@ namespace Bank
         {
            var acc = new Accounting(); 
            var sht = new ShowText();
+           var checkDep = new CheckingDataFile();
            sht.Text("Welcome to the World Bank\n");
            sht.Text("1-Balance\n2-Take Money\n3-Deposit\n4-Exit\n");
            var choise = Console.ReadLine();
@@ -45,7 +46,7 @@ namespace Bank
                    switch (choiseDeposit)
                    {
                        case "1" :
-                           var checkDep = new CheckingDataFile();
+                           
                            if (checkDep.CheckOpenDeposit())
                            {
                                sht.Text("Open deposit to 6% in minute\nPlease enter sum.\n");
@@ -60,11 +61,24 @@ namespace Bank
                            else sht.ReturnMenu();
                            break;
                        case "2" :
-                           //TODO: close deposit
+                           //TODO: check open deposit or not
+                           sht.Text("If you sure to close deposit press \"y\"");
+                           var enterChoise = Console.ReadKey();
+                           if (enterChoise.Key == ConsoleKey.Y)
+                           {
+                               deposit.CloseDeposit();
+                           }
                            break;
                        case "3" :
-                           deposit.CheckDeposit();
-                           sht.ReturnMenu();
+                           if (checkDep.CheckCloseDeposit())
+                           {
+                               deposit.CheckAllAtribute();
+                               sht.ReturnMenu();
+                           }
+                           else
+                           {
+                               sht.ReturnMenu();
+                           }
                            break;
                        case "4":
                            sht.ReturnMenu();
