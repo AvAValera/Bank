@@ -5,7 +5,6 @@ namespace Bank
 {
     class CheckingDataFile
     {
-        public static bool EnableDeposit = false;
         public void CheckFileBalance()
         {
             if (!File.Exists("balance.txt"))
@@ -28,12 +27,19 @@ namespace Bank
             {
                using (File.Create("deposit.txt"));
             }
+        }
+        public bool CheckOpenDeposit()
+        {
             FileInfo file = new FileInfo("deposit.txt");
             if (file.Length != 0)
             {
-                EnableDeposit = true;
-                ShowText shtext = new ShowText();
+                var shtext = new ShowText();
                 shtext.Text("Deposit now open!\n");
+                return false;
+            }
+            else
+            {
+                return true;
             }
         }
     }

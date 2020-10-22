@@ -38,23 +38,33 @@ namespace Bank
                    sht.ReturnMenu();
                    break;
                case "3":
+                   Console.Clear();
                    var deposit = new Deposit();
                    sht.Text("1-Open Deposit\n2-Close Deposit\n3-Check Deposit\n4-Return main menu\n");
                    string choiseDeposit = Console.ReadLine();
                    switch (choiseDeposit)
                    {
                        case "1" :
-                           sht.Text("Open deposit to 6% in minute\nPlease enter sum.\n");
-                           double sum;
-                           while (!double.TryParse(Console.ReadLine(), out sum))
+                           var checkDep = new CheckingDataFile();
+                           if (checkDep.CheckOpenDeposit())
                            {
-                               sht.Text("Please enter how much money!\n");
+                               sht.Text("Open deposit to 6% in minute\nPlease enter sum.\n");
+                               double sum;
+                               while (!double.TryParse(Console.ReadLine(), out sum))
+                               {
+                                   sht.Text("Please enter how much money!\n");
+                               }
+                               deposit.OpenDeposit(sum);
+                               acc.TakeMoney(sum);
                            }
-                           
+                           else sht.ReturnMenu();
                            break;
                        case "2" :
+                           //TODO: close deposit
                            break;
                        case "3" :
+                           deposit.CheckDeposit();
+                           sht.ReturnMenu();
                            break;
                        case "4":
                            sht.ReturnMenu();
